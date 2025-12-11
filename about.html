@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body class="about-page">
     <div class="container">
         <header>
             <a href="index.html" class="site-title">Varun Dantuluri</a>
@@ -26,27 +26,97 @@
         </header>
 
         <main>
-            <h1>About</h1>
+            <div class="character-sheet">
+                <!-- Header -->
+                <div class="sheet-header">
+                    <div class="header-field">
+                        <label>Name</label>
+                        <span>Varun Dantuluri</span>
+                    </div>
+                    <div class="header-field">
+                        <label>Class</label>
+                        <span>Lvl 1 Polymath</span>
+                    </div>
+                    <div class="header-field">
+                        <label>Alignment</label>
+                        <span>Chaotic Curious</span>
+                    </div>
+                </div>
 
-            <p>I am a generalist in a world of specialists.</p>
-            <p>My work sits at the intersection of digital systems, narrative structures, and biological logic. I don't
-                believe in picking a lane—I believe in building highways between them.</p>
+                <div class="sheet-grid">
+                    <!-- Left: Stats -->
+                    <div class="stats-column">
+                        <div class="stat-box">
+                            <label>INT</label>
+                            <span class="stat-value">16</span>
+                            <span class="stat-mod">Fast Learner</span>
+                        </div>
+                        <div class="stat-box">
+                            <label>WIS</label>
+                            <span class="stat-value">8</span>
+                            <span class="stat-mod">Shiny Object Syndrome</span>
+                        </div>
+                        <div class="stat-box">
+                            <label>DEX</label>
+                            <span class="stat-value">18</span>
+                            <span class="stat-mod">Typing Speed</span>
+                        </div>
+                        <div class="stat-box">
+                            <label>CHA</label>
+                            <span class="stat-value">12</span>
+                            <span class="stat-mod">Introverted Storyteller</span>
+                        </div>
+                    </div>
 
-            <h3 style="margin-top: 3rem;">Connect</h3>
-            <ul style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 0.8rem;">
-                    <strong>Twitter / X</strong>: <a href="#">@VarunDantuluri</a>
-                </li>
-                <li style="margin-bottom: 0.8rem;">
-                    <strong>GitHub</strong>: <a href="https://github.com/VarunVarmaD">@VarunVarmaD</a>
-                </li>
-                <li style="margin-bottom: 0.8rem;">
-                    <strong>LinkedIn</strong>: <a href="#">Varun Dantuluri</a>
-                </li>
-                <li style="margin-bottom: 0.8rem;">
-                    <strong>Email</strong>: <a href="mailto:hello@example.com">hello@example.com</a>
-                </li>
-            </ul>
+                    <!-- Right: Proficiencies -->
+                    <div class="skills-column">
+                        <h4>Proficiencies</h4>
+                        <div class="skill-row">
+                            <label>Coding</label>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <label>Worldbuilding</label>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <label>Bio-Hacking</label>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 30%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <label>Finance</label>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 40%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom: Backstory -->
+                <div class="sheet-section backstory">
+                    <h4>Character History</h4>
+                    <p>Player originated as a specialist but suffered from the 'Generalist Curse' debuff for 3 years.
+                        Realized that multiclassing is actually a feature, not a bug. Currently exploring the server
+                        looking for intersections between Code, Biology, and Money.</p>
+                    <p><strong>Current Quest:</strong> Document the logic of complex systems.<br>
+                        <strong>Inventory:</strong> VS Code, Coffee Mug, Kindle.
+                    </p>
+                </div>
+
+                <!-- Footer / Socials -->
+                <div class="sheet-footer">
+                    <div class="social-links">
+                        <a href="#">GitHub</a> &bull; <a href="#">Twitter/X</a> &bull; <a href="#">LinkedIn</a> &bull;
+                        <a href="#">Email</a>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <footer>
