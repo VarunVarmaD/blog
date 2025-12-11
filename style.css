@@ -189,6 +189,8 @@ article {
 .post-header {
     margin-bottom: 3.5rem;
     text-align: center;
+    display: block;
+    /* Override global header flex */
 }
 
 .post-header h1 {
