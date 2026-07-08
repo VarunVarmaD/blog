@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categories - Varun Dantuluri</title>
+    <title>Devlog - Varun Dantuluri</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -20,43 +20,48 @@
             <a href="index.html" class="site-title">Varun Dantuluri</a>
             <nav>
                 <a href="index.html">Home</a>
-                <a href="categories.html">Categories</a>
-                <a href="now.html">Now</a>
+                <a href="projects.html">Projects</a>
+                <a href="categories.html">Devlog</a>
                 <a href="about.html">About</a>
             </nav>
         </header>
 
         <main>
-            <h1 style="text-align: center; font-family: var(--font-hand); font-size: 3rem;">My Messy Desk</h1>
-            <p style="text-align: center; font-style: italic;">Where ideas collide.</p>
+            <h1 style="text-align: center; font-family: var(--font-heading); font-size: 3rem;">Devlog</h1>
+            <p style="text-align: center; font-style: italic;">Building in public. One week at a time.</p>
 
-            <div class="desk-surface">
-                <!-- Messy Overlay Items (User Provided) -->
-                <img src="assets/images/crumpled_paper.png" class="mess-item mess-paper-1" alt="Crumpled paper">
-                <img src="assets/images/crumpled_paper.png" class="mess-item mess-paper-2" alt="Crumpled paper">
-                <img src="assets/images/crumpled_paper.png" class="mess-item mess-paper-3" alt="Crumpled paper">
-
-                <div class="scattered-grid">
-                    <div class="stack-card">
-                        <h2>Road to Polymath</h2>
-                        <p>Documenting the journey of learning across disciplines.</p>
-                        <ul style="list-style: none; padding: 0; margin-top: 1rem; text-align: center;">
-                            <li>
-                                <a href="posts/jack-of-all-trades-myth.html"
-                                    style="font-family: var(--font-hand); font-size: 1.2rem; color: #444; text-decoration: underline; text-decoration-color: var(--accent-color);">
-                                    The Myth of the Jack of All Trades
-                                </a>
-                            </li>
-                        </ul>
+            <div class="desk-surface" style="margin-top: 3rem; margin-bottom: 4rem;">
+                <div class="scattered-grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; width: 100%;">
+                    <!-- Pulse Stack -->
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0;">
+                        <span style="font-family: var(--font-hand); font-size: 1.2rem; color: rgba(255,255,255,0.6); margin-bottom: 0.75rem; letter-spacing: 0.05em;">Pulse</span>
+                        <a href="posts/pulse-devlog-0.html" style="text-decoration: none; color: inherit;">
+                            <div class="stack-card">
+                                <h2>Devlog 0</h2>
+                                <p style="font-weight: bold; margin-bottom: 0.5rem; color: #222;">What is Pulse?</p>
+                                <p style="font-size: 0.85rem;">May 2025</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </main>
 
         <footer>
-            <p>&copy; 2025 Varun Dantuluri</p>
+            <p>&copy; 2026 Varun Dantuluri</p>
+            <div class="social-links-global">
+                <a href="https://github.com/varund" target="_blank" aria-label="GitHub">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://linkedin.com/in/varund" target="_blank" aria-label="LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+            </div>
         </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js" defer></script>
 </body>
 
 </html>

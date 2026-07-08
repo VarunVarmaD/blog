@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devlog 0: What is Pulse? — Varun Dantuluri</title>
+    <meta name="description" content="The origin of Pulse — why I scrapped a vibe-coded frontend and started over with my own hands.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        /* ─── Post-specific: narrow reading column ─── */
+        .post-container {
+            max-width: 65ch;
+            margin: 0 auto;
+            padding: 0 1.5rem 6rem;
+        }
+
+        .post-header {
+            margin-bottom: 3.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--line-color);
+        }
+
+        .post-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-tag {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 3px 10px;
+            border-radius: 3px;
+            opacity: 0.9;
+        }
+
+        .post-date {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .post-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3rem);
+            line-height: 1.2;
+            color: var(--text-color);
+            margin: 0 0 1rem;
+        }
+
+        .post-subtitle {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* ─── Body copy ─── */
+        .post-body p {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: var(--text-color);
+            margin-bottom: 1.6rem;
+        }
+
+        .post-body h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        /* ─── The key quote line ─── */
+        .post-body .key-line {
+            font-style: italic;
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            color: var(--accent-color);
+            border-left: 3px solid var(--accent-color);
+            padding-left: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        /* ─── Next up box ─── */
+        .next-up {
+            margin-top: 4rem;
+            padding: 1.5rem 1.75rem;
+            border: 1px solid var(--line-color);
+            border-radius: 6px;
+            background: rgba(0,0,0,0.015);
+        }
+
+        .next-up-label {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin: 0 0 0.5rem;
+        }
+
+        .next-up p {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ─── Back link ─── */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-decoration: none;
+            margin-top: 4rem;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* ─── Word reveal base state ─── */
+        .word-wrap {
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: bottom;
+        }
+
+        .word {
+            display: inline-block;
+            will-change: transform, opacity;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="../index.html" class="site-title">Varun Dantuluri</a>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../categories.html">Devlog</a>
+                <a href="../about.html">About</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="post-container">
+                <header class="post-header">
+                    <div class="post-eyebrow" id="post-eyebrow">
+                        <span class="post-tag">Pulse</span>
+                        <span class="post-date">May 2025</span>
+                    </div>
+                    <h1 class="post-title" id="post-title">Devlog 0 — What is Pulse?</h1>
+                    <p class="post-subtitle" id="post-subtitle">The idea, the scrapped start, and why I began again.</p>
+                </header>
+
+                <div class="post-body" id="post-body">
+                    <p>The plan was simple: build a site that tracks the websites I visit frequently so I know when they're down. The idea came from constantly checking my college results portal and government websites, never knowing if the site was down or just slow. Frustrating enough to build something about it.</p>
+
+                    <p>Like most projects I start these days, I kicked things off with vibe coding — minimal prompts, just vibing to get a feel for what I was building. Used Stitch by Google for the frontend design and Cursor for the code. Honestly? It looked decent. Clean UI, good vibes.</p>
+
+                    <p>But here's the thing — the frontend looked great and the backend didn't exist yet. I couldn't explain a single decision in the codebase. So I scrapped it and started over with my own hands, using Claude as a mentor to guide me rather than generate code for me.</p>
+
+                    <p class="key-line">What I learned: vibe coding takes the fun out of programming. You're not really coding, you're just waiting. It's less vibe coding, more vibe waiting.</p>
+
+                    <h3>What's next — Devlog 1</h3>
+
+                    <p>In the next entry I'll cover designing the database schema from scratch — four tables, real relationships, no ORMs — and building auth without Supabase holding my hand. JWT, bcrypt, raw PostgreSQL. The fun stuff.</p>
+
+                    <div class="next-up">
+                        <p class="next-up-label">Coming up</p>
+                        <p>Database schema design from scratch. Four tables, real relationships, no ORMs. Auth with JWT + bcrypt + raw PostgreSQL. No shortcuts.</p>
+                    </div>
+                </div>
+
+                <a href="../categories.html" class="back-link">← Back to Devlog</a>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2026 Varun Dantuluri</p>
+            <div class="social-links-global">
+                <a href="https://github.com/varund" target="_blank" aria-label="GitHub">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://linkedin.com/in/varund" target="_blank" aria-label="LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // ─── Utility: split an element's text into wrapped word spans ───────────
+        function splitWords(el) {
+            // Preserve HTML structure by operating on text nodes only inside <p> and <h3>
+            // For simplicity, work on the full innerHTML word by word
+            const rawHTML = el.innerHTML;
+            // Wrap each word in a span, preserving existing tags
+            const wrapped = rawHTML.replace(/(<[^>]+>)|([^\s<]+)/g, (match, tag, word) => {
+                if (tag) return tag; // keep HTML tags intact
+                return `<span class="word-wrap"><span class="word">${word}</span></span>`;
+            });
+            el.innerHTML = wrapped;
+            return el.querySelectorAll('.word');
+        }
+
+        // ─── 1. Header: fade in on load, not scroll ──────────────────────────────
+        const headerTl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+
+        headerTl
+            .from('#post-eyebrow', { opacity: 0, y: 18, duration: 0.6 })
+            .from('#post-title',   { opacity: 0, y: 22, duration: 0.7 }, '-=0.3')
+            .from('#post-subtitle',{ opacity: 0, y: 16, duration: 0.5 }, '-=0.4');
+
+        // ─── 2. Scroll-reveal paragraphs & headings ───────────────────────────────
+        const body = document.getElementById('post-body');
+
+        // Collect all paragraphs and h3s in order
+        const revealEls = body.querySelectorAll('p:not(.key-line), h3, .next-up');
+
+        revealEls.forEach(el => {
+            const words = splitWords(el);
+
+            gsap.from(words, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 88%',
+                    toggleActions: 'play none none none',
+                },
+                opacity: 0,
+                y: 20,
+                duration: 0.5,
+                stagger: 0.05,
+                ease: 'power2.out',
+            });
+        });
+
+        // ─── 3. Key line: slower stagger so it lands ─────────────────────────────
+        const keyLine = body.querySelector('.key-line');
+        const keyWords = splitWords(keyLine);
+
+        gsap.from(keyWords, {
+            scrollTrigger: {
+                trigger: keyLine,
+                start: 'top 88%',
+                toggleActions: 'play none none none',
+            },
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            stagger: 0.08,   // deliberately slower
+            ease: 'power2.out',
+        });
+    </script>
+</body>
+
+</html>

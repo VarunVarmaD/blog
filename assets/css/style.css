@@ -37,20 +37,6 @@ body {
     line-height: 1.7;
     font-size: 18px;
     padding: 3rem 1.5rem;
-    opacity: 0;
-    animation: fadeIn 0.8s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 img {
@@ -169,33 +155,8 @@ nav a {
     position: relative;
 }
 
-/* Hand-drawn underline effect for Nav */
-nav a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--accent-color);
-    visibility: hidden;
-    opacity: 0;
-    transform: scaleX(0) rotate(-2deg);
-    /* Start hidden and small */
-    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-radius: 2px 50% 30% 5px;
-    /* Irregular shape */
-}
-
 nav a:hover {
     color: var(--accent-color);
-}
-
-nav a:hover::after {
-    visibility: visible;
-    opacity: 1;
-    transform: scaleX(1) rotate(-2deg);
-    /* imperfect rotation */
 }
 
 /* Index Post List */
@@ -518,7 +479,7 @@ footer {
 
 /* Pinboard Section */
 .pinboard {
-    background-color: #d7c4a1;
+    background-color: #e8e0d0;
     /* Cork base */
     background-image: radial-gradient(transparent 90%, rgba(0, 0, 0, 0.05) 90%);
     background-size: 20px 20px;
@@ -556,8 +517,8 @@ footer {
     min-height: 200px;
     display: flex;
     flex-direction: column;
-    /* Hand-drawn paper shape */
-    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    /* Hand-drawn effect now provided by SVG filter, so keeping background straight */
+    border-radius: 2px;
     transition: transform 0.3s ease;
 }
 
@@ -576,10 +537,7 @@ footer {
     color: #444;
 }
 
-.pinned-note:hover {
-    transform: scale(1.02) !important;
-    z-index: 10;
-}
+/* Hover handled by GSAP */
 
 /* Random Rotations */
 .note-1 {
@@ -777,4 +735,77 @@ footer {
 .sheet-footer a {
     color: #333;
     text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.8rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    background-image: none; /* remove link underline */
+}
+
+.btn:hover {
+    background-image: none; /* remove link underline */
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: 1px solid var(--accent-color);
+}
+
+.btn-primary:hover {
+    background-color: #a02d22;
+    color: #fff;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-color);
+    position: relative;
+    /* Border is injected and drawn by GSAP SVG */
+}
+
+.btn-outline:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+    color: var(--text-color);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Global Social Links */
+.social-links-global {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.social-links-global a {
+    color: var(--text-light);
+    background-image: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.social-links-global a:hover {
+    color: var(--accent-color);
+    background-image: none;
+    transform: translateY(-2px);
+}
+.social-links-global svg {
+    width: 20px;
+    height: 20px;
 }

@@ -4,39 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Varun Dantuluri</title>
+    <title>Week 1: Laying the Foundation - Varun Dantuluri</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
-<body class="about-page">
+<body>
     <div class="container">
         <header>
-            <a href="index.html" class="site-title">Varun Dantuluri</a>
+            <a href="../index.html" class="site-title">Varun Dantuluri</a>
             <nav>
-                <a href="index.html">Home</a>
-                <a href="projects.html">Projects</a>
-                <a href="categories.html">Devlog</a>
-                <a href="about.html">About</a>
+                <a href="../index.html">Home</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../categories.html">Devlog</a>
+                <a href="../about.html">About</a>
             </nav>
         </header>
 
         <main>
-            <article class="about-content" style="max-width: 680px; margin: 0 auto; padding-top: 2rem;">
-                <h1 style="font-family: var(--font-heading); margin-bottom: 2rem;">About Me</h1>
-                <p>Hi, I'm Varun. I build full-stack products and write about the process.</p>
-                <p>I originated as a specialist but suffered from the 'Generalist Curse' for a few years. I eventually realized that <strong>multiclassing is actually a feature, not a bug</strong>. Currently, I'm exploring the intersections between Code, Biology, and Money.</p>
-                <p>My quest is to document the logic of complex systems, whether that's building resilient software architecture or exploring new paradigms.</p>
-                <div style="margin-top: 3rem; display: flex; gap: 1.5rem; font-family: var(--font-body); font-weight: 500;">
-                    <a href="https://github.com/varund" target="_blank" style="color: var(--accent-color);">GitHub</a>
-                    <a href="https://linkedin.com/in/varund" target="_blank" style="color: var(--accent-color);">LinkedIn</a>
-                    <a href="mailto:varun@example.com" style="color: var(--accent-color);">Email</a>
-                </div>
+            <article>
+                <header class="post-header">
+                    <span class="post-meta">December 11, 2025</span>
+                    <h1>Week 1: Laying the Foundation</h1>
+                    <h2 class="post-subtitle">Building in public</h2>
+                </header>
+
+                <p>This week, I started laying the groundwork for Pulse, the new uptime monitoring SaaS.</p>
+                
+                <h3>Architecture Decisions</h3>
+                <p>I decided to go with React and Vite for the frontend to keep things fast, and Express for the backend. Tailwind is being used for styling.</p>
+                <p>The goal is to build a reliable system that can check endpoints every minute without bogging down the database. I'm exploring Redis for a queueing mechanism to handle the high throughput of uptime checks.</p>
+
+                <h3>Next Steps</h3>
+                <p>Next week, I plan to finalize the authentication flow and get the first prototype of the dashboard working.</p>
             </article>
+
+            <a href="../categories.html" class="back-link">&larr; Back to Devlog</a>
         </main>
 
         <footer>
@@ -53,7 +60,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="assets/js/animations.js" defer></script>
+    <script src="../assets/js/animations.js" defer></script>
 </body>
 
 </html>
